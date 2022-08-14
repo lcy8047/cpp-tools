@@ -1,0 +1,9 @@
+cmake_minimum_required( VERSION 3.10 )
+set(CMAKE_CXX_STANDARD 17)
+project( cpp-tools VERSION 1.0 )
+
+if (UNIX AND NOT APPLE)
+    add_subdirectory( lib )
+else()
+    message(FATAL_ERROR "This project is linux project")
+endif()
