@@ -1,1 +1,2 @@
 add_subdirectory(TimeChecker)
+add_subdirectory(TerminalUtil)
