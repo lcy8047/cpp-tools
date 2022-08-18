@@ -14,7 +14,9 @@ public:
     TimeChecker( const TimeChecker &t ) = delete;
     void    Start       ( void );
     void    Stop        ( void );
+    int64_t getMicrosec ( void );
     int64_t getMillisec ( void );
+    int64_t getNanosec  ( void );
 
 private:
     std::chrono::_V2::steady_clock::time_point start;
