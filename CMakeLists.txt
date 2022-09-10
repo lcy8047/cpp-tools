@@ -4,6 +4,8 @@ project( cpp-tools VERSION 1.0 )
 
 if (UNIX AND NOT APPLE)
     add_subdirectory( lib )
+elseif(APPLE)
+    add_subdirectory( lib )
 else()
     message(FATAL_ERROR "This project is linux project")
 endif()

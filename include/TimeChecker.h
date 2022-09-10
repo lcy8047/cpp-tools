@@ -8,9 +8,7 @@
 
 class TimeChecker {
 public:
-    TimeChecker( void )
-        : prev_checked_time( -1 )
-    {}
+    TimeChecker( void ) {}
     TimeChecker( const TimeChecker &t ) = delete;
     void    Start       ( void );
     void    Stop        ( void );
@@ -19,9 +17,13 @@ public:
     int64_t getNanosec  ( void );
 
 private:
+#ifdef __APPLE__
+    std::chrono::steady_clock::time_point start;
+    std::chrono::steady_clock::time_point end;
+#elif __linux
     std::chrono::_V2::steady_clock::time_point start;
     std::chrono::_V2::steady_clock::time_point end;
-    int64_t prev_checked_time;
+#endif
 };
 
 #endif /* TIMECHECKER_H_ */
