@@ -9,7 +9,8 @@ public:
         : _prev_line_num( 0 )
     {}
 
-    void PrintSrcLine( std::string src_file_path , int line_num );
+    bool        PrintSrcLine    ( std::string src_file_path , int line_num );
+    std::string GetSrcLine      ( std::string src_file_path, int line_num );
 private:
     int _prev_line_num;
     std::string _prev_file_path;
